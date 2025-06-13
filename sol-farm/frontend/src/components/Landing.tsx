@@ -30,7 +30,7 @@ export default function Landing() {
       <div className="text-center mt-10">
         <button
           className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
-          onClick={() => navigate('/app')}
+          onClick={() => navigate('/login')}
         >
           Login to Start Farming 🚜
         </button>
