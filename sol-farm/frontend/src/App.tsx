@@ -152,14 +152,6 @@ export default function App() {
           <p>📧 Email: {verified ? `${email} (verified)` : email}</p>
 
           <div className="mt-4 bg-gray-800 p-4 rounded">
-            <input type="email" value={email} onChange={e=>setEmail(e.target.value)}
-              placeholder="Enter Gmail" className="w-full p-2 rounded mb-2 text-black" />
-            <button onClick={sendCode} className="w-full py-2 bg-blue-600 rounded mb-2">Send Code</button>
-
-            <input type="text" value={code} onChange={e=>setCode(e.target.value)}
-              placeholder="Enter Code" className="w-full p-2 rounded mb-2 text-black"/>
-            <button onClick={verifyEmail} className="w-full py-2 bg-green-600 rounded mb-2">Verify Email</button>
-
             <div className="mb-2">
               <select value={tier} onChange={e=>setTier(e.target.value as any)} className="w-full p-2 rounded text-black">
                 <option>Free</option><option>Advanced</option><option>Prime</option>
