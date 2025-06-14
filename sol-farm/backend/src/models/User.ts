@@ -1,12 +1,16 @@
 import mongoose from 'mongoose';
 
+const loginLogSchema = new mongoose.Schema({
+  timestamp: Number,
+  ip: String,
+}, { _id: false });
+
 const userSchema = new mongoose.Schema({
   pubkey: { type: String, required: true, unique: true },
-  tier: { type: String, enum: ['Free', 'Advanced', 'Prime'], default: 'Free' },
   email: { type: String },
   verified: { type: Boolean, default: false },
-  verificationCode: { type: String },
-  createdAt: { type: Date, default: Date.now },
+  tier: { type: String, default: 'Free' },
+  loginHistory: [loginLogSchema],
 });
 
-export const User = mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema);
